@@ -75,45 +75,23 @@
             <div class="nav-wrapper container">
                 <ul class="left">
                     <li><a href="https://polyextended.github.io/">Home</a></li>
-                    <li><a href="https://polyextended.github.io/live/">PolyLive</a></li>
+                    <li><a href="https://polyextended.github.io/time/">PolyTime</a></li>
+                    <li><a href="https://polyextended.github.io/time/">PolyLive</a></li>
                     <li><a href="https://polyextended.github.io/streamlookup/">PolyLookup</a></li>
                 </ul>
             </div>
         </nav>
         <div class="container">
-            <h3>PolyTime</h3>
-            <span>Whippy Start's At 7:30 AEST</span>
-            <p id="local-time">Local Time: <span class="badge bg-primary text-white"></span></p>
-            <p id="aest-time">AEST: <span class="badge bg-success text-white"></span></p>
+            <h3>PolyTime Tracker</h3>
+      <div class="container mt-3">
+    <a href="https://polyextended.github.io/time/whippy" class="btn btn-primary">Whippy</a>
+</div>
         </div>
     </header>
 
     <!-- Add Materialize JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <script>
-        // Function to update time
-        function updateTime() {
-            // Get the current local time
-            const localTime = new Date();
-
-            // Display local time
-            $("#local-time .badge").html(localTime.toLocaleTimeString()).addClass('text-white');
-
-            // Display AEST time (subtracting an hour)
-            const aestTime = new Date(localTime.getTime() - 60 * 60 * 1000).toLocaleTimeString("en-AU", { timeZone: "Australia/Sydney" });
-            $("#aest-time .badge").html(aestTime).addClass('text-white');
-        }
-
-        // Update time every second
-        setInterval(updateTime, 1000);
-
-        // Initialize Materialize components
-        $(document).ready(function () {
-            M.AutoInit();
-        });
-    </script>
 
 </body>
 </html>
